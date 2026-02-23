@@ -22,11 +22,14 @@
 - **Linguagem**: C#
 - **Persistência**: **EF Core** com **migrations**
 - **Banco**: Postgres (via Docker)
-- **API**: ASP.NET Core Web API ou Minimal API (sua escolha)
+- **API**: requisito ASP.NET com Minimal API 
 - **Async/await** end-to-end
 - **Arquitetura**: separar claramente **Domain / Application / Infrastructure / API**
-- **Testes**: xUnit ou NUnit
+- **Testes**: requisito xUnit 
 - **Docker**: `docker compose up` deve subir a API + banco
+- **Mediator**: (Opcional) Desejável, sabe utilizar mediator?
+- **CQRS**: (Opcional) Demonstrar separação entre Command e Query (CQRS simplificado).
+- **Behaviors**: (Opcional) Desejável uso de fastfail e problem details em tratamentos glabais.
 
 ---
 
@@ -59,7 +62,10 @@ Você irá construir uma API REST para gestão de **Pedidos** com itens e valida
 
 ## Requisitos funcionais (MUST)
 
-### 1) Criar pedido
+### 1) Crud simples de Produto
+- Dominio anêmico
+
+### 2) Criar pedido
 
 `POST /orders`
 
@@ -76,7 +82,7 @@ Você irá construir uma API REST para gestão de **Pedidos** com itens e valida
 - Estado:
   - pedido nasce como `Placed` (ou `Draft` -> `Placed`, se preferir justificar)
 
-### 2) Confirmar pedido (idempotente)
+### 3) Confirmar pedido (idempotente)
 
 `POST /orders/{id}/confirm`
 
@@ -87,7 +93,7 @@ Você irá construir uma API REST para gestão de **Pedidos** com itens e valida
 - Estado:
   - `Placed` -> `Confirmed`
 
-### 3) Cancelar pedido (idempotente)
+### 4) Cancelar pedido (idempotente)
 
 `POST /orders/{id}/cancel`
 
@@ -98,13 +104,13 @@ Você irá construir uma API REST para gestão de **Pedidos** com itens e valida
 - Estado:
   - `Placed/Confirmed` -> `Canceled`
 
-### 4) Consultar pedido
+### 5) Consultar pedido
 
 `GET /orders/{id}`
 
 - Deve retornar pedido + itens (DTO adequado)
 
-### 5) Listar pedidos (com paginação e filtro)
+### 6) Listar pedidos (com paginação e filtro)
 
 `GET /orders?customerId=&status=&from=&to=&page=&pageSize=`
 
@@ -118,9 +124,19 @@ Você irá construir uma API REST para gestão de **Pedidos** com itens e valida
 
 ## Requisitos não funcionais (MUST)
 
-### Clean Architecture / SOLID
+### Vertical Slices / SOLID
 
-- O projeto deve ser implementado seguindo os princípios de Clean Architecture e SOLID.
+- A separação de responsabilidades existe (Domain / Application / Infrastructure), porém a organização do código deve ser feita por Vertical Slices (por feature).
+
+### Concorrência
+
+- A confirmação do pedido deve ser segura sob concorrência e não pode permitir estoque negativo/inconsistente. Descreva no README a estratégia adotada. Exemplos aceitos:
+- - Controle otimista com ConcurrencyToken/RowVersion e retorno 409 Conflict em caso de conflito; ou
+- - Atualização atômica no banco (ex.: UPDATE ... WHERE available >= quantity) validando “linhas afetadas”.
+
+### CancellationToken
+
+- Endpoints, handlers e repositórios devem aceitar CancellationToken e propagar para operações assíncronas (EF Core/I/O), mantendo a cadeia de cancelamento.
 
 ### Testes (TDD-friendly)
 
@@ -160,7 +176,7 @@ Você irá construir uma API REST para gestão de **Pedidos** com itens e valida
 - DDD prático: invariantes, coesão, modelagem, value objects (se aplicável)
 - SOLID e Clean Code (nomes, acoplamento, legibilidade)
 - Testes: cobertura de regras e casos importantes, legibilidade
-- EF Core: modelagem, migrations, queries, tracking/performance
+- EF Core: modelagem, migrations, queries, tracking/performance, desejavel: sabe usar o Dapper?
 - Segurança: auth JWT e autorização básica
 - Entrega: Docker, README, experiência de rodar
 
