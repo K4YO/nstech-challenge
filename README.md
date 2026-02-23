@@ -27,9 +27,9 @@
 - **Arquitetura**: separar claramente **Domain / Application / Infrastructure / API**
 - **Testes**: requisito xUnit 
 - **Docker**: `docker compose up` deve subir a API + banco
-- **Mediator**: (Opcional) Desejável, sabe utilizar mediator?
+- **Mediator**: (Opcional) Saber utilizar mediator.
 - **CQRS**: (Opcional) Demonstrar separação entre Command e Query (CQRS simplificado).
-- **Behaviors**: (Opcional) Desejável uso de fastfail e problem details em tratamentos glabais.
+- **Behaviors**: (Opcional) Desejável uso de fastfail e problem details em tratamentos globais.
 
 ---
 
