@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Order\Confirm\Dtos_\" />
+    <Folder Include="Order\Confirm\Validators_\" />
+    <Folder Include="Order\Create\Dtos_\" />
+    <Folder Include="Order\Create\Validators_\" />
+    <Folder Include="Order\GetOrders\Dtos_\" />
+    <Folder Include="Order\GetOrders\Validators_\" />
+    <Folder Include="Order\GetOrder\Dtos_\" />
+    <Folder Include="Order\GetOrder\Validators_\" />
+  </ItemGroup>
+
+</Project>
