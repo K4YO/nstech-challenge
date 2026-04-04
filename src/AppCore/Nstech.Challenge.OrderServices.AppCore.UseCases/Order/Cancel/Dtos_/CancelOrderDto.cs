@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Nstech.Challenge.OrderServices.AppCore.UseCases.Order.Cancel.Dtos_;
 
-namespace Nstech.Challenge.OrderServices.AppCore.UseCases.Order.Cancel.Dtos_
-{
-    internal class CancelOrderDto
-    {
-    }
-}
+public sealed record CancelOrderDto(Guid OrderId);
+

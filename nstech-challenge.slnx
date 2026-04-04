@@ -3,6 +3,7 @@
   <Folder Name="/Itens de Solução/">
     <File Path="CHALLENGE.md" />
     <File Path="README.md" />
+    <File Path="SOLUTION_STRUCTURE.md" />
   </Folder>
   <Folder Name="/src/" />
   <Folder Name="/src/AppCore/">

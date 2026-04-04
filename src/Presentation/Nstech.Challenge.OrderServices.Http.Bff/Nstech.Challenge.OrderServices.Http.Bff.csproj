@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.14" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AppCore\Nstech.Challenge.OrderServices.AppCore.UseCases\Nstech.Challenge.OrderServices.AppCore.UseCases.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Nstech.Challenge.OrderServices.Infrastructure\Nstech.Challenge.OrderServices.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
+

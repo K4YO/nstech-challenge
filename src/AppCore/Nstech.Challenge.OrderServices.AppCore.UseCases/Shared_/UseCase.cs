@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Nstech.Challenge.OrderServices.AppCore.UseCases.Shared_;
 
-namespace Nstech.Challenge.OrderServices.AppCore.UseCases.Shared_
+public abstract class UseCase
 {
-    internal class UseCase
-    {
-    }
 }
+
+public abstract class UseCase<TInput, TOutput>
+{
+    public abstract Task<TOutput> ExecuteAsync(TInput input, CancellationToken cancellationToken = default);
+}
+

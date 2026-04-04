@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
+using Nstech.Challenge.OrderServices.AppCore.UseCases.Order.Cancel.Dtos_;
 
-namespace Nstech.Challenge.OrderServices.AppCore.UseCases.Order.Cancel.Validators_
+namespace Nstech.Challenge.OrderServices.AppCore.UseCases.Order.Cancel.Validators_;
+
+public class CancelOrderDtoValidator : AbstractValidator<CancelOrderDto>
 {
-    internal class CancelOrderDtoValidator
+    public CancelOrderDtoValidator()
     {
+        RuleFor(x => x.OrderId)
+            .NotEmpty().WithMessage("OrderId cannot be empty");
     }
 }
+
