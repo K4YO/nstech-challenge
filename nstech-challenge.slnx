@@ -1,23 +1,21 @@
 <Solution>
   <Folder Name="/cd/" />
   <Folder Name="/Itens de Solução/">
-    <File Path="CHALLENGE.md" />
-    <File Path="README.md" />
-    <File Path="SOLUTION_STRUCTURE.md" />
+    <File Path="docs/CHALLENGE.md" />
   </Folder>
   <Folder Name="/src/" />
   <Folder Name="/src/AppCore/">
-    <Project Path="src/AppCore/Nstech.Challenge.OrderServices.AppCore.Domain/Nstech.Challenge.OrderServices.AppCore.Domain.csproj" Id="1d23fa11-35b3-4b43-a7d8-30967988a3ef" />
-    <Project Path="src/AppCore/Nstech.Challenge.OrderServices.AppCore.UseCases/Nstech.Challenge.OrderServices.AppCore.UseCases.csproj" Id="d6784962-5d0e-443c-8ad4-f0249c00518e" />
+    <Project Path="src/Nstech.Challenge.OrderServices.AppCore.Domain/Nstech.Challenge.OrderServices.AppCore.Domain.csproj" />
+    <Project Path="src/Nstech.Challenge.OrderServices.AppCore.UseCases/Nstech.Challenge.OrderServices.AppCore.UseCases.csproj" />
   </Folder>
   <Folder Name="/src/Infrastructure/">
-    <Project Path="src/Infrastructure/Nstech.Challenge.OrderServices.Infrastructure.Migrations.PostgreSQL/Nstech.Challenge.OrderServices.Infrastructure.Migrations.PostgreSQL.csproj" Id="4773152b-4232-4058-82f5-e96765f4d126" />
-    <Project Path="src/Infrastructure/Nstech.Challenge.OrderServices.Infrastructure/Nstech.Challenge.OrderServices.Infrastructure.csproj" Id="f998b514-03cc-45c1-b74b-b07c6d89789e" />
+    <Project Path="src/Nstech.Challenge.OrderServices.Infrastructure.Migrations.PostgreSQL/Nstech.Challenge.OrderServices.Infrastructure.Migrations.PostgreSQL.csproj" />
+    <Project Path="src/Nstech.Challenge.OrderServices.Infrastructure/Nstech.Challenge.OrderServices.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/src/Presentation/">
-    <Project Path="src/Presentation/Nstech.Challenge.OrderServices.Http.Bff/Nstech.Challenge.OrderServices.Http.Bff.csproj" Id="4c24c1e7-04eb-4d1d-be2e-90bf4f28f93a" />
+    <Project Path="src/Nstech.Challenge.OrderServices.Presentation.Bff/Nstech.Challenge.OrderServices.Presentation.Bff.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/UnitTests/Nstech.Challenge.OrderServices.UnitTests/Nstech.Challenge.OrderServices.UnitTests.csproj" Id="44b663ae-913d-4e28-8cb5-37e96fcefca1" />
+    <Project Path="tests/Nstech.Challenge.OrderServices.UnitTests/Nstech.Challenge.OrderServices.UnitTests.csproj" />
   </Folder>
 </Solution>
