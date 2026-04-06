@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: nstech-challenge-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: order_services
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: src/Nstech.Challenge.OrderServices.Presentation.Bff/Dockerfile
+    container_name: nstech-challenge-api
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=order_services;Username=postgres;Password=postgres
+      - JwtSettings__SecretKey=your-super-secret-key-that-is-at-least-32-characters-long-change-in-production
+      - JwtSettings__ExpirationMinutes=60
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

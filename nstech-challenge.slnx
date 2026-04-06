@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/cd/" />
+  <Folder Name="/Itens de Solução/">
+    <File Path="docs/CHALLENGE.md" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/AppCore/">
+    <Project Path="src/Nstech.Challenge.OrderServices.AppCore.Domain/Nstech.Challenge.OrderServices.AppCore.Domain.csproj" />
+    <Project Path="src/Nstech.Challenge.OrderServices.AppCore.UseCases/Nstech.Challenge.OrderServices.AppCore.UseCases.csproj" />
+  </Folder>
+  <Folder Name="/src/Infrastructure/">
+    <Project Path="src/Nstech.Challenge.OrderServices.Infrastructure.Migrations.PostgreSQL/Nstech.Challenge.OrderServices.Infrastructure.Migrations.PostgreSQL.csproj" />
+    <Project Path="src/Nstech.Challenge.OrderServices.Infrastructure/Nstech.Challenge.OrderServices.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Presentation/">
+    <Project Path="src/Nstech.Challenge.OrderServices.Presentation.Bff/Nstech.Challenge.OrderServices.Presentation.Bff.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Nstech.Challenge.OrderServices.UnitTests/Nstech.Challenge.OrderServices.UnitTests.csproj" />
+  </Folder>
+</Solution>
